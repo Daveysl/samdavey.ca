@@ -1,0 +1,55 @@
+$phone: "screen and (max-width:870px)";
+$tablet: "screen and (max-width:1250px)";
+
+// @media #{$phone} {}
+// @media #{$tablet} {}
+
+$primary1  : #009DF2;	/* Main Primary color */
+$primary2  : #2EB4FC;
+$primary3  : #0AA9FF;
+$primary4  : #006EA9;
+$primary5  : #005583;
+
+$secondary1: #0017F4;	/* Main Secondary color (1) */
+$secondary2: #4052FC;
+$secondary3: #192FFF;
+$secondary4: #0011B6;
+$secondary5: #010E8F;
+
+$highlight1: #00F571;	/* Main Secondary color (2) */
+$highlight2: #23FC88;
+$highlight3: #00FF76;
+$highlight4: #00BA57;
+$highlight5: #009244;
+
+$greyed-color: #C0C0C0;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+@mixin display-flex() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($args) {
+    -webkit-box-flex: $args;
+    -webkit-flex: $args;
+    -ms-flex: $args;
+    flex: $args; 
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

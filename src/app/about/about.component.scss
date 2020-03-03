@@ -1,0 +1,64 @@
+@import "../../_globals";
+
+.info {
+    font-family: "Lato", sans-serif;
+    font-size: 1.3em;
+
+    @include display-flex;
+    flex-direction: column;
+
+    @media #{$tablet} {
+        padding-bottom: 100px;
+    }
+
+    &__block {
+        background: rgba(0, 17, 65, 0.733);
+        padding: 100px calc(60% - 200px) 100px 200px;
+        width: 40%;
+        align-self: center;
+        
+
+        @media #{$tablet} {
+            padding: 100px calc(15% + 100px);
+            width: calc(70% - 200px);
+        }
+        @media #{$phone} {
+            padding: 100px 20px;
+            width: calc(100% - 40px);
+        }
+       
+    }
+}
+
+.goals {
+    font-family: "Lato", sans-serif;
+    font-size: 1.3em;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, calc(100% / 3));
+
+    @media #{$tablet} {
+        @include display-flex();
+        flex-flow: column nowrap;
+        align-items: center;
+    }
+
+    &__block {
+        background: rgba(0, 17, 65, 0.733);
+        padding: 100px 75px;
+        @include display-flex();
+        flex-flow: column nowrap;
+        align-items: center;
+
+        @media #{$tablet} {
+            width: calc(100% - 150px);
+            margin-bottom: 20px;
+        }
+
+        @media #{$phone} {
+            width: calc(100% - 150px);
+        }
+    
+
+    }
+}

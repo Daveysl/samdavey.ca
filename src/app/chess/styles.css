@@ -1,0 +1,204 @@
+body {
+    background: white;
+    font-family: sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.headers {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+h2 {
+    color: grey;
+    font-size: 15px;
+    padding-left: 20px;
+}
+
+.table {
+    display: flex;
+    flex-flow:row wrap;
+    min-width: 440px;
+    height: 440px;
+    box-shadow: 4px 4px 10px -4px #000000;
+    margin-left: 20px;
+    border-radius: 10px;
+    background: #eee;
+}
+
+.box {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-size: 35px;
+    border: none;
+    user-select: none;
+}
+
+.label {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    user-select: none;
+}
+
+.commands {
+    min-width: 280px;
+    padding: 10px;
+    margin-left: 10px;
+    box-shadow: 3px 3px 10px -2px #000000;
+    border-radius: 10px;
+}
+
+form {
+    height: fit-content;
+}
+
+    .lines {
+        height: 340px;
+        background: black!important;
+        margin-bottom: 10px;
+        color: white;
+        padding: 10px;
+        font-family: 'Courier New', Courier, monospace;
+        overflow-y: auto;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    .inputs {
+        padding: 5px;
+        height: 20%;
+    }
+
+        .inputs input {
+            background: black;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+.errormsg {
+    font-size: 12px; 
+    padding-top: 5px; 
+    margin-left: 50px;
+}
+
+.help {
+    min-width: 200px;
+    height: 100%;
+    margin-left: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 10px -2px #000000;
+    border-radius: 5px;
+}
+
+.instructions {
+    font-size: 14px;
+    font-family: sans-serif;
+    padding: 5px;
+}
+
+.instructions b {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.instructions div {
+    color: rgb(124, 9, 9); 
+    padding: 2px 0 5px 0 ;
+    font-size: 12px;
+}
+
+.pieces {
+    padding: 5px 10px;
+    border: 1px solid #2b2b2b;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+}
+
+.helptitle {
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.row:nth-of-type(odd) .box:nth-of-type(even), .row:nth-of-type(even) .box:nth-of-type(odd) {
+    background: rgb(161, 161, 161);
+}
+
+.row:first-of-type .label {
+    background: transparent!important;
+    justify-content: flex-end;
+    padding-right: 3px;
+    width: 15px;
+}
+.row:last-of-type .label {
+    background: transparent!important;
+    justify-content: flex-start;
+    padding-left: 3px;
+    width: 15px;
+}
+
+.row .label:first-of-type  {
+    background: transparent!important;
+    align-items: flex-end;
+    height: 20px;
+}
+
+.row .label:last-of-type  {
+    background: transparent!important;
+    align-items: flex-start;
+    height: 20px;
+}
+
+sub {
+    font-size: 8px;
+}
+
+@media only screen and (max-width: 880px) {
+    
+    .headers {
+        padding-bottom: 10px;
+        flex-direction: column;
+    }
+    
+    .headers:first-child *{
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .commands {
+        width: 440px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .help {
+        width: 440px;
+        margin: 10px 30px;
+    }
+
+}

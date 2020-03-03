@@ -1,0 +1,31 @@
+<div class="page_container">
+    <div class="main">
+        <div class="main__header">Hello.</div>
+        <div class="main__subheader">
+            I'm an aspiring web developer, programmer and designer.   
+        </div>
+        <div class="route-btn">
+            <a href="home#about" class="main__button">See More</a>
+        </div>
+        <div id="about"></div>
+    </div>
+    
+    <div class="main__content">
+        <div class="split_container">
+            <div class="intro">
+                <div class="intro__header">About Me</div>
+                <div class="intro__paragraph">My name's Sam. I'm currently studying at the NSCC Truro campus as a full time second year student.</div>
+                <div style="height: 50px;"></div>
+                <a [routerLink]="['../about']" class="intro__btn">Learn About Me</a>
+            </div>
+            <div class="intro">
+                <div class="intro__header">My Skills</div>
+                <div class="intro__paragraph">
+                    I can create and design professional grade websites, program functionality and data into them, connect them to the internet, and design business cards, logos, and banners.
+                    <br><a [routerLink]="['../work']" style="text-decoration: none; color: rgb(0, 140, 255); font-weight: bold; padding-left: calc(50% - 60px);">See my work</a>
+                </div>
+                <a [routerLink]="['../skills']" class="intro__btn">See My Skills</a>
+            </div>
+        </div>
+    </div>
+</div>

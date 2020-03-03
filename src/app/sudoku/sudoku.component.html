@@ -1,0 +1,21 @@
+<div class="page_container">
+<div class="plate">
+    <div class="sudoku">
+      <div class="box" *ngFor="let box of sudoku.boxes">
+  
+        <div class="cell" *ngFor="let cell of box" (mousedown)="cellClicked(cell)" [ngClass]="{'highlighted' : cell.highlighted, 'clicked' : cell.clicked}">
+          <div *ngIf="cell.value > 0"> {{ cell.value }} </div>
+        </div>
+  
+      </div>
+    </div>
+    
+    <div class="side">
+      <div class="numbers">
+        <div class="number" *ngFor="let number of numbers" (click)="numberClicked(number)" [ngClass]="{'selected' : number.selected}">
+          {{ number.value }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

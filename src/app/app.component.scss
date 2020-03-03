@@ -1,0 +1,151 @@
+@import "./../_globals";
+
+.background {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: -2;
+    background: url("../assets/images/webbackground.png") no-repeat fixed center;
+    background-size: auto 150%;
+    animation: gradientBG 30s ease infinite;    
+}
+
+.tint {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: -1;
+    background-color: rgba($color:rgb(0, 29, 65) , $alpha: 0.7);
+}
+
+.root {
+    height:100%;
+
+    &__body {
+        margin-left: 50px;
+        height: auto;
+        @media #{$phone} {
+            margin-left: 0;
+        }
+    }
+
+    &__header {
+        @include display-flex();
+        width: 100%;
+        background: rgb(6, 25, 82);
+        flex-flow: row wrap;
+        z-index: 3;
+        position: fixed;
+        top: 0;
+        justify-content: flex-end;
+        align-items:center;
+
+        @media #{$phone} {
+            flex-direction: column;
+        }
+
+    }
+
+    & .title { // header title block
+        @include display-flex();
+        @include flex(1 1 auto);
+        align-items: center;
+        justify-self: flex-start;
+
+        &__name a {
+            font-weight: bold;
+            font-size: 1.5em;
+            padding-left: 5px;
+            width: 200px;
+            text-decoration: none;
+            color: white;
+        }
+    
+        &__img {
+            width: 40px;
+            height: 40x;
+            padding-left: 23px; // so that it looks more center
+            margin: 0 10px;
+        }
+    }
+}
+
+.navtoggle {
+    display: none;
+    padding: 20px;
+    cursor: pointer;
+
+    & * {
+        font-size: 2em;
+    }
+
+    @media #{$phone} {
+       display: block;
+     }
+     
+}
+
+.nav {
+    @include display-flex;
+    flex-flow: row nowrap;
+    padding-right: 50px;
+    overflow: hidden;
+    height: 100%;
+
+    @media #{$phone} {
+        display: none;
+    }
+
+    &--mobile {
+        display: none;
+
+        @media #{$phone} {
+            background-color: rgba(12, 23, 82, 0.658);
+            width: calc( 100% - 50px);
+            padding-right: 5%;
+            overflow: hidden;
+            @include display-flex;
+            flex-direction: column;
+        }
+        
+    }
+
+    &__btn {
+        display: block;
+        height: 100%;
+        padding: 20px 15px;
+        text-align: center;
+        background-color: transparent;
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: background 0.3s ease-out;
+
+        &:hover {
+            background-color:  rgb(0, 128, 255);
+            transition: background 0.3s ease-out;
+        }
+
+        @media #{$phone} {
+            width: 100%;
+        }
+        
+    }
+}
+
+.footer {
+    padding: 10% 20px 20px 20px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    border-left: 15px solid rgb(52, 117, 216); 
+    border-bottom: 15px solid rgb(52, 117, 216); 
+
+    @media #{$phone} {
+        margin-left: 0;
+        border-left: 10px solid rgb(52, 117, 216); 
+        border-bottom: 10px solid rgb(52, 117, 216); 
+    }
+}
+

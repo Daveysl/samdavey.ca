@@ -1,0 +1,41 @@
+<div class="loading-overlay"></div>
+<div class="tint"></div>
+<div class="background"></div>
+
+<div class="root">
+  <div class="root__header">
+    <div class="title">
+
+		<a href="/home"><img class="title__img" src="./../assets/images/SamDuccLogo.svg" alt="Home Logo" /></a>
+		<div class="title__name"><a href="/home">Sam Davey</a></div>
+		
+		<div class="navtoggle" (click)="toggleNav()"><i class="fas fa-bars"></i></div>
+	</div>
+
+	<div class="nav">
+		<a [routerLink]="['/home']" class="nav__btn">Home</a>
+		<a [routerLink]="['/about']" class="nav__btn">About</a>
+		<a [routerLink]="['/skills']" class="nav__btn">Skills</a>
+		<a [routerLink]="['/work']" class="nav__btn">Work</a>
+		<a [routerLink]="['/resume']" class="nav__btn">Resume</a>
+		<a [routerLink]="['/contact']" class="nav__btn">Contact</a>
+	</div>
+	<div class="nav--mobile" *ngIf="navOn">
+		<a [routerLink]="['/home']" class="nav__btn">Home</a>
+		<a [routerLink]="['/about']" class="nav__btn">About</a>
+		<a [routerLink]="['/skills']" class="nav__btn">Skills</a>
+		<a [routerLink]="['/work']" class="nav__btn">Work</a>
+		<a [routerLink]="['/resume']" class="nav__btn">Resume</a>
+		<a [routerLink]="['/contact']" class="nav__btn">Contact</a>
+	</div>
+  </div>
+
+  <div class="root__body">
+	  <router-outlet> </router-outlet>
+  </div>
+
+
+
+  <div class="footer">Made by Sam Davey using Angular 8</div>
+
+</div>

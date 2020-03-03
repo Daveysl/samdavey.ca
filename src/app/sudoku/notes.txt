@@ -1,0 +1,107 @@
+--------------------------------- box 1 (b) row 1 col 1
+boxes[b][1] = rows[r][c] = cols[c][r]
+--------------------------------- box 2 (b) row 1 col 2
+boxes[b][2] = rows[r][c] = cols[c][r]
+--------------------------------- box 3 (b) row 1 col 3
+boxes[b][3] = rows[r][c] = cols[c][r]
+
+------------------------------------------- row 1 r
+--------------------------------- col 1 c
+rows[r][c] = cols[c][r]
+--------------------------------- col 2
+rows[r][c] = cols[c][r]
+--------------------------------- col 3
+rows[r][c] = cols[c][r]
+
+row 1 col 6 which box?
+box = col%3 
+
+
+-------------------------- RAW DATA  ----------------------------------------------------------------------------
+cols[0][0] = rows[0][0] = boxes[0][0]
+cols[0][1] = rows[1][0] = boxes[0][3]
+cols[0][2] = rows[2][0] = boxes[0][6]
+
+
+cols[0][1] = rows[1][0] = boxes[0][1]
+cols[0][2] = rows[2][0] = boxes[2][1]
+
+cols[][] = rows[][] = boxes[][] = cols[][]
+cols[][] = rows[][] = boxes[][] = cols[][]
+cols[][] = rows[][] = boxes[][] = cols[][]
+
+
+
+
+row[0][0]  
+col[0][0]
+box[0][0]  
+
+row[0][]  
+col[][]
+box[][]  
+
+row[0][]  
+col[][]
+box[][]  
+
+row[0][]  
+col[][]
+box[][]  
+
+row[][]  
+col[][]
+box[][]  
+
+row[][]  
+col[][]
+box[][]  
+
+row[][]  
+col[][]
+box[][]  
+
+row[][]  
+col[][]
+box[][]  
+
+row[][]  
+col[][]
+box[][]  
+
+
+rows[x].forEach(cell => {
+        rand = this.getRandom(1, 9);
+
+        if (cell.value == rand) {
+         cell.value = 0;
+        } else {
+          cell.value = rand;
+        }
+      });
+
+      cols[x].forEach((cell, c) => {
+        rand = this.getRandom(1, 9);
+        if (cell.value == rand) {
+         cell.value = 0;
+        } else {
+          if (rows[cell.row][cell.col].value == cell.value) {
+            cell.value = 0;
+          } else {
+            cell.value = rand;
+          }
+        }
+      });
+
+      boxes[x].forEach((cell) => {
+        rand = this.getRandom(1, 9);
+        if (cell.value == rand) {
+         cell.value = 0;
+        } else {
+          if (rows[cell.row][cell.col].value == cell.value || cols[cell.col][cell.row].value == cell.value) {
+            cell.value = 0;
+          } else {
+            cell.value = rand;
+          }
+        }
+      });

@@ -1,0 +1,133 @@
+@import "../../globals";
+
+$fore: #06F;
+$clicked: #8ebbff;
+$high: rgba(179, 179, 179, 0.521);
+$back: rgb(255, 255, 255);
+$height: 300px;
+
+@mixin noselect() {
+    -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}
+
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    @include noselect();
+}
+
+.plate {
+    display: flex;
+    padding: 15px;
+    color: black;
+    
+    & .side {
+        margin-left: 15px;
+        margin-top: 66.6666px;
+
+        & .numbers {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            width: 100px;
+            
+            & .number {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: calc(100px/3);
+                height: calc(300px/9);
+                background: rgba(255, 255, 255, 0.7);
+                border-bottom: 1px solid grey;
+                border-right: 1px solid grey;
+                cursor: pointer;
+
+                &:nth-of-type(3n) {
+                    border-right: 0 solid $fore;
+                }
+
+                &:nth-of-type(2n + 7) {
+                    border-bottom: 0 solid $fore;
+                }
+
+                &:last-of-type {
+                    box-sizing: content-box;
+                    border: none;
+                }
+
+                &:hover {
+                    background: rgb(211, 211, 211);
+                }
+            }
+        }
+    }
+    
+}
+
+.sudoku {
+    background-color: $fore;
+    width: $height;
+    height: $height;
+    display: flex;
+    flex-flow: row wrap;
+    cursor: pointer;
+
+    & .box {
+        width: calc(100%/3);
+        height: calc(100%/3);
+        border-right: 3px solid $fore;
+        border-bottom: 3px solid $fore;
+        
+        display: flex;
+        flex-flow: row wrap;
+        
+        &:nth-of-type(3n) {
+            border-right: 0 solid black;
+        }
+        
+        &:nth-of-type(n + 7) {
+            border-bottom: 0 solid black;
+        }
+        
+        & .cell {
+            width: calc(100%/3);
+            height: calc(100%/3);
+            border-right: 1px solid grey;
+            border-bottom: 1px solid grey;
+            border-radius: 3px;
+            background: $back;
+            
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:nth-of-type(3n) {
+                border-right: 0 solid black;
+            }
+
+            &:nth-of-type(n + 7) {
+                border-bottom: 0px solid black;
+            }
+
+            &:hover {
+                background: rgb(180, 180, 180);
+            }
+        }
+    }
+}
+
+.clicked, .selected {
+    background: $clicked!important;
+}
+
+.highlighted {
+    background: $high!important;
+}
+
