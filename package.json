@@ -50,5 +50,18 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.7.5"
-  }
+  },
+  "description": "My NSCC portfolio site",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daveysl/samdavey.ca.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daveysl/samdavey.ca/issues"
+  },
+  "homepage": "https://github.com/Daveysl/samdavey.ca#readme"
 }
